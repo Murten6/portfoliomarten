@@ -5,6 +5,12 @@
     "description": "Interactief online learning platform voor basisschoolleerlingen en leerkrachten.",
     "role": "UX Designer (onderzoek, prototyping, testen)",
     "image": "/images/techtok-mini.png",
+    "image2": "/images/research.png",
+    "image3": "/images/pages.png",
+    "image4": "/images/overview.svg",
+    "image5": "/images/coursestart.svg",
+    "image6": "/images/coursefinish.svg",
+    "image7": "/images/class.svg",
     "background": "#6a4c93",
     "overview": "Het project omvatte het ontwerp van een interactief online learning platform, speciaal voor basisschoolleerlingen en hun leerkrachten. Het doel was een gebruiksvriendelijke en veilige omgeving te creëren die leren leuk en effectief maakt voor kinderen, en overzichtelijk en functioneel is voor leerkrachten.",
     "problem": "Voor kinderen: beperkte cognitieve en motorische vaardigheden, korte aandachtsspanne.\nVoor leerkrachten: behoefte aan overzicht, efficiënt beheer van lessen en voortgang.\nDoel: Een platform ontwerpen dat kinderen op een toegankelijke manier laat leren, terwijl leerkrachten efficiënt lesmateriaal kunnen beheren, voortgang volgen en leerlingen ondersteunen.",
@@ -18,8 +24,8 @@
     "prototypeLinks": {
       "kids": "https://www.figma.com/proto/nVaW5DJGjFS4fzkPyTrD0A/techtok-designs?page-id=533%3A2574&node-id=548-1606&viewport=291%2C126%2C0.06&t=s1fe5MykeBjsOcU6-1&scaling=contain&content-scaling=fixed&starting-point-node-id=548%3A1606",
       "teachers": "https://www.figma.com/proto/nVaW5DJGjFS4fzkPyTrD0A/techtok-designs?page-id=1045%3A3047&node-id=1125-3741&viewport=41%2C706%2C0.13&t=fwx1RDdiT4gnBtb0-1&scaling=contain&content-scaling=fixed&starting-point-node-id=1125%3A3741"
-    }
-  },
+  }
+},
   {
     "slug": "project-2",
     "title": "Project 2",

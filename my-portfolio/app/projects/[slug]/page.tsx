@@ -8,6 +8,11 @@ interface Project {
   description: string;
   role: string;
   image?: string;
+  image2?: string;
+  image3?: string;
+  image4?: string;
+  image5?: string;
+  image6?: string;
   background?: string;
   overview?: string;
   problem?: string;
@@ -49,24 +54,21 @@ export default function ProjectSlugPage({ params }: SlugPageProps) {
     { title: "Learnings", content: project.learnings },
   ];
 
+  // Map van secties naar bijbehorende images
+  const sectionImages: (string | undefined)[] = [
+    project.image,
+    project.image2,
+    project.image3,
+    project.image4,
+    project.image5,
+    project.image6,
+  ];
+
   return (
     <div
       className="w-screen min-h-screen px-6 md:px-20 py-10"
       style={{ backgroundColor: project.background || "#f5f5f5" }}
     >
-      {/* Hero image */}
-      {project.image && (
-        <div className="w-full flex justify-center mb-10">
-          <Image
-            src={project.image}
-            alt={project.title}
-            width={400}
-            height={200}
-            className="rounded-md"
-          />
-        </div>
-      )}
-
       {/* Titel en rol */}
       <div className="text-center mb-12">
         <h1 className="text-5xl font-bold text-black mb-4">{project.title}</h1>
@@ -80,7 +82,7 @@ export default function ProjectSlugPage({ params }: SlugPageProps) {
         )}
       </div>
 
-      {/* Dynamische secties */}
+      {/* Dynamische secties met tekst + bijbehorende afbeelding */}
       {sections.map(
         (sec, index) =>
           sec.content && (
@@ -90,22 +92,27 @@ export default function ProjectSlugPage({ params }: SlugPageProps) {
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               }`}
             >
+              {/* Tekstblok */}
               <div className="md:w-1/2">
                 <h2 className="text-3xl font-semibold mb-2 text-black">
                   {sec.title}
                 </h2>
                 <p className="text-black whitespace-pre-line">{sec.content}</p>
               </div>
-              {project.image && index === 0 && (
-                <div className="md:w-1/2 hidden md:flex justify-center">
+
+              {/* Afbeelding voor de sectie of lege ruimte */}
+              {sectionImages[index] ? (
+                <div className="md:w-1/2 flex justify-center">
                   <Image
-                    src={project.image}
-                    alt={`${project.title} visual`}
-                    width={300}
-                    height={150}
-                    className="rounded-md"
+                    src={sectionImages[index]!}
+                    alt={`${project.title} ${sec.title} visual`}
+                    width={400}
+                    height={250}
+                    className="rounded-md object-contain"
                   />
                 </div>
+              ) : (
+                <div className="md:w-1/2"></div> // Leeg blok voor uitlijning
               )}
             </section>
           )
