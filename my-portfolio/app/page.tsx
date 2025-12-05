@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import projectsData from "./data/projects.json"; // controleer pad
 import NavBar from "./_components/navigation/NavBar";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,33 +14,41 @@ interface Project {
 }
 
 export default function HomePage() {
+  const [projects, setProjects] = useState<Project[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const projects: Project[] = projectsData as Project[];
-
+  // JSON client-side ophalen
   useEffect(() => {
+    fetch("/data/projects.json")
+      .then((res) => res.json())
+      .then((data) => setProjects(data))
+      .catch((err) => console.error("Failed to load projects:", err));
+  }, []);
+
+  // Slideshow interval
+  useEffect(() => {
+    if (projects.length === 0) return;
+
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % projects.length);
-    }, 3000); // 3 seconden per slide
+    }, 3000);
     return () => clearInterval(interval);
-  }, [projects.length]);
+  }, [projects]);
+
+  if (projects.length === 0) return <p>Loading projects...</p>;
 
   return (
     <div className="w-screen min-h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth relative">
-      {/* NavBar altijd rechtsboven */}
       <div className="absolute top-6 right-6 z-50">
         <NavBar />
       </div>
 
-      {/* Intro + Slideshow blok */}
       <section className="w-screen h-screen snap-start flex flex-col items-center justify-center bg-blue-500 text-white">
-        {/* Titel en subtitel */}
         <div className="text-center mb-10">
           <h1 className="text-5xl font-bold mb-4">Portfolio Website</h1>
           <p className="text-2xl font-semibold">Marten Fleuren</p>
         </div>
 
-        {/* Slideshow box */}
         <div className="relative w-[600px] max-w-[90%] h-[400px] rounded-lg overflow-hidden">
           {projects.map((project: Project, index: number) => (
             <div
@@ -56,7 +63,6 @@ export default function HomePage() {
                 fill
                 className="object-contain"
               />
-              {/* Knop onder de afbeelding */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
                 <Link
                   href={`/projects/${project.slug}`}

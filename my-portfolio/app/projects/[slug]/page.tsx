@@ -1,16 +1,15 @@
 "use client";
 
-import { useState } from "react";
-import projects from "../../data/projects.json";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useParams } from "next/navigation"; // <--- voor nieuwe params handling
+import { useParams } from "next/navigation";
 
 interface Project {
   slug: string;
   title: string;
-  explanation: string;
-  role: string;
+  explanation?: string;
+  role?: string;
   image?: string;
   image2?: string;
   image3?: string;
@@ -35,12 +34,19 @@ interface Project {
 }
 
 export default function ProjectSlugPage() {
+  const [projects, setProjects] = useState<Project[]>([]);
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
-  const params = useParams(); // <--- gebruik hook
+  const params = useParams();
   const slug = params.slug as string;
-  const project = projects.find((p) => p.slug === slug);
 
-  if (!project) return <p>Project not found</p>;
+  useEffect(() => {
+    fetch("/data/projects.json")
+      .then((res) => res.json())
+      .then((data: Project[]) => setProjects(data));
+  }, []);
+
+  const project = projects.find((p) => p.slug === slug);
+  if (!project) return <p>Loading or Project not found</p>;
 
   const sections: { title: string; content?: string }[] = [
     { title: "Overview", content: project.overview },
@@ -68,7 +74,6 @@ export default function ProjectSlugPage() {
       className="w-screen min-h-screen px-6 md:px-20 py-10 pb-40"
       style={{ backgroundColor: project.background || "#f5f5f5" }}
     >
-      {/* Hero image bovenaan */}
       {project.image && (
         <div className="w-full flex justify-center mb-10">
           <Image
@@ -81,7 +86,6 @@ export default function ProjectSlugPage() {
         </div>
       )}
 
-      {/* Titel en rol */}
       <div className="text-center mb-12">
         <h1 className="text-5xl font-bold text-black mb-4">{project.title}</h1>
         {project.role && (
@@ -94,7 +98,6 @@ export default function ProjectSlugPage() {
         )}
       </div>
 
-      {/* Dynamische secties met grotere afbeeldingen */}
       {sections.map(
         (sec, index) =>
           sec.content && (
@@ -129,7 +132,6 @@ export default function ProjectSlugPage() {
           )
       )}
 
-      {/* Zoom modal */}
       {zoomedImage && (
         <div
           className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 cursor-zoom-out"
@@ -145,7 +147,6 @@ export default function ProjectSlugPage() {
         </div>
       )}
 
-      {/* Prototype links */}
       {project.prototypeLinks &&
         (project.prototypeLinks.prot1 || project.prototypeLinks.prot2) && (
           <section className="mb-12 text-center">
@@ -177,7 +178,6 @@ export default function ProjectSlugPage() {
           </section>
         )}
 
-      {/* Back button */}
       <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2">
         <Link
           href="/projects"
