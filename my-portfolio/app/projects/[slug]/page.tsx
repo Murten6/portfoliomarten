@@ -4,6 +4,7 @@ import { useState } from "react";
 import projects from "../../data/projects.json";
 import Link from "next/link";
 import Image from "next/image";
+import { useParams } from "next/navigation"; // <--- voor nieuwe params handling
 
 interface Project {
   slug: string;
@@ -33,16 +34,11 @@ interface Project {
   };
 }
 
-interface SlugPageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default function ProjectSlugPage({ params }: SlugPageProps) {
+export default function ProjectSlugPage() {
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
-
-  const project = projects.find((p) => p.slug === params.slug);
+  const params = useParams(); // <--- gebruik hook
+  const slug = params.slug as string;
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) return <p>Project not found</p>;
 

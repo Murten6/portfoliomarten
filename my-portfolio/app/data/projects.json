@@ -34,9 +34,9 @@
     "explanation": "Een systeem om de voortgang van studenten bij te houden, ontworpen tijdens een project voor mijn opleiding. Ik maakte de wireframes en designs, met focus op overzicht, duidelijke navigatie en logische hiërarchie. Hoewel dit nog geen diepgaand UX-onderzoek bevatte, leerde ik hoe ik complexe informatie overzichtelijk kan presenteren en gebruiksvriendelijke dashboards kan ontwerpen.",
     "role": "Wireframes en design gemaakt, focus op overzichtelijk dashboard",
     "image": "/images/logoanubis.svg",
-    "image2": "/images/Campinghom.png",
-    "image3": "/images/campinginpu.png",
-    "image4": "/images/campingbotto.svg",
+    "image2": "/images/BMC.png",
+    "image3": "/images/file.png",
+    "image4": "/images/profile.png",
     "background": "#c8eb84",
     "overview": "Screenshot van dashboardpagina of student-detailpagina.",
     "problem": "",
@@ -48,8 +48,8 @@
     "finalDesigns": "",
     "learnings": "Dit project gaf mij ervaring met het structureren van complexe informatie en het ontwerpen van een overzichtelijk dashboard. Hoewel dit nog geen diepgaand UX-onderzoek omvatte, leerde ik principes van hiërarchie en duidelijkheid in interfaces toe te passen.",
     "prototypeLinks": {
-      "prot1": "",
-      "prot2": ""
+      "prot1": "https://www.figma.com/proto/AVWm03LiJmdxTS01RKVuNv/Anubis-schetsen?page-id=1%3A2699&node-id=1-3953&viewport=1089%2C-6007%2C0.14&t=FAVewH0vl4o6GJMR-1&scaling=contain&content-scaling=fixed&starting-point-node-id=1%3A3953&show-proto-sidebar=1",
+      "prot2": "https://www.figma.com/proto/AVWm03LiJmdxTS01RKVuNv/Anubis-schetsen?page-id=1%3A2699&node-id=1-3958&viewport=639%2C-2631%2C0.07&t=e5QBz1i5k9dsvMrF-1&scaling=contain&content-scaling=fixed&starting-point-node-id=1%3A3958&show-proto-sidebar=1"
     }
   },
   {
@@ -84,6 +84,9 @@
     "explanation": "",
     "role": "Zelfstandig ontworpen en ontwikkeld. Focus op overzicht, navigatie en presentatie van informatie",
     "image": "/images/portfolio.png",
+    "image2": "/images/firstdesign.png",
+    "image3": "/images/Overmij.png",
+    "image4": "/images/Werk.png",
     "background": "#fff2a0",
     "overview": "Screenshot van de homepage, navigatie, en een pagina met projecten of CV.",
     "problem": "",
@@ -95,7 +98,7 @@
     "finalDesigns": "",
     "learnings": "Dit was mijn eerste project als ICT-student. Ik heb geleerd hoe ik informatie overzichtelijk kan presenteren en een consistente stijl kan toepassen. Het project legde de basis voor mijn latere UX-projecten.",
     "prototypeLinks": {
-      "prot1": "",
+      "prot1": "https://www.figma.com/design/7c2thvAH04T5AGL3h5lJTs/Portfolio-Website-jaar-1?node-id=1669-162202&t=cMubKmrKxYotm92K-1",
       "prot2": ""
     }
   }
