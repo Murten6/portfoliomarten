@@ -1,13 +1,15 @@
-import React from "react";
 import Link from "next/link";
 
-export default function NavBar() {
+interface NavBarProps {
+  className?: string; // optional, only used for extra styling
+}
+
+export default function NavBar({ className }: NavBarProps) {
   return (
-    <nav className="flex gap-4 p-4 bg-gray-900">
+    <nav className={`flex gap-6 text-white font-semibold ${className ?? ""}`}>
       <Link href="/">Home</Link>
       <Link href="/projects">Projects</Link>
       <Link href="/about">About</Link>
-      <Link href="/contact">Contacts</Link>
     </nav>
   );
 }
