@@ -60,7 +60,7 @@ export default function ProjectsPage() {
                   Rol: {project.role}
                 </p>
 
-                {/* Knop naar case study */}
+                {/* Knop naar casestudy */}
                 <Link
                   href={`/projects/${project.slug}`}
                   className="inline-block px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition"
