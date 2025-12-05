@@ -26,9 +26,9 @@ export default function AboutPage() {
           className="
             flex flex-col md:flex-row
             items-center justify-center
-            w-full h-full max-w-6xl
+            w-full h-full max-w-7xl
             gap-0 md:gap-4
-            px-6 md:px-20
+            px-3 md:px-20
           "
         >
           {/* Afbeelding links */}
@@ -51,7 +51,7 @@ export default function AboutPage() {
           </div>
 
           {/* Tekstblok rechts */}
-          <div className="flex flex-col justify-center w-full md:w-1/2 text-white p-4 md:p-8">
+          <div className="flex flex-col justify-center w-full md:w-[600px] lg:w-[700px] text-white p-4 md:p-8">
             <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4">
               {aboutBlock.title}
             </h2>
