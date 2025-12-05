@@ -35,8 +35,6 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, [projects]);
 
-  if (projects.length === 0) return <p>Loading projects...</p>;
-
   return (
     <div className="w-screen min-h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth relative">
       <div className="absolute top-6 right-6 z-50">

@@ -46,7 +46,7 @@ export default function ProjectSlugPage() {
   }, []);
 
   const project = projects.find((p) => p.slug === slug);
-  if (!project) return <p>Loading or Project not found</p>;
+  if (!project) return;
 
   const sections: { title: string; content?: string }[] = [
     { title: "Overview", content: project.overview },

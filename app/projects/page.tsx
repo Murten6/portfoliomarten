@@ -25,8 +25,6 @@ export default function ProjectsPage() {
       .catch((err) => console.error("Failed to load projects:", err));
   }, []);
 
-  if (!projects.length) return <p>Loading projects...</p>;
-
   return (
     <div className="w-screen h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth relative">
       <div className="absolute top-6 right-6 z-50">
