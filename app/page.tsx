@@ -17,7 +17,7 @@ export default function HomePage() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // JSON client-side ophalen
+  // JSON clientside ophalen
   useEffect(() => {
     fetch("/data/projects.json")
       .then((res) => res.json())
